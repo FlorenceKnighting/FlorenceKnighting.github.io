@@ -5,26 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlorenceKnighting.github.io</title>
 </head>
-<body>
-    
-  <p>Before the script...</p>
-
-  <script>
-    alert( 'Hello, world!' );
-  </script>
-
-  <p>...After the script.</p>
-    
- <h3>Counter:</h3>
- <label id="count"></label><br><br>
- <button onclick="counterFunc()">Click</button>
-    
- var count = 0;
-      
-function counterFunc(){
- count++;
- document.getElementById("count").innerHTML = count;
-}
+<body style="text-align: center;">
+    <h1 style="color: green;">
+        IdleGame
+    </h1>
+  
+    <h4>
+        Count the number of 
+        times a button is clicked
+    </h4>
+  
+    <button id="btn">Click Here!</button>
+  
+    <p>
+        Button Clicked <span 
+        id="display">0</span> Times
+    </p>
+  
+    <script type="text/javascript">
+        var count = 0;
+        var btn = document.getElementById("btn");
+        var disp = document.getElementById("display");
+  
+        btn.onclick = function () {
+            count++;
+            disp.innerHTML = count;
+        }
+    </script>
+</body>
     
     
 </body>
