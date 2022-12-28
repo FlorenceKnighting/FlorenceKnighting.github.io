@@ -4,22 +4,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlorenceKnighting.github.io</title>
-    
-<script>
-     var clicks = 0;
-    function myFunction() {
-        clicks += 1;
-        document.getElementById("demo").innerHTML = clicks;
-    }
-</script>
 </head>
+    
 <body style="text-align: center;">
-  
-<p>Click the button to trigger a function.</p>
+  var clicks = 0;
 
-<button onclick="myFunction()">Click me</button>
+  function onClick() {
+  clicks += 1;
+  document.getElementById("clicks").innerHTML = clicks;
+  };
+    
+  <button type="button" onClick="onClick()">Click me</button>
+  <p>Clicks: <a id="clicks">0</a></p>
 
-<p id="demo"></p>
     
 </body>
 </html>
