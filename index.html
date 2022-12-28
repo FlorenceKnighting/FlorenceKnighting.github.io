@@ -21,17 +21,9 @@
     
  count = 0;
       
- function counterFunc(){
- if (typeof(Storage) !== "undefined") {
-  if (localStorage.count) {
-   localStorage.count = Number(localStorage.count)+1;
-  } else {
-     localStorage.count = 1;
-  }
-  document.getElementById("count").innerHTML = localStorage.count;
-  }else {
-    document.getElementById("count").innerHTML = "Sorry, the browser you used does not support web storage.";
-  }
+function counterFunc(){
+ count++;
+ document.getElementById("count").innerHTML = count;
 }
     
     
