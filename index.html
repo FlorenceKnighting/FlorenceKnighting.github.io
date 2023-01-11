@@ -79,11 +79,17 @@
       } else if (upgrade === "Autoclick") {
         autoClick = effect;
       } else if (upgrade === "Kennel Upgrade") {
+        dpm = dpm - kennels*kennelEffect
         kennelEffect += effect;
+        dpm = dpm + kennels*kennelEffect
+        kennelUpgrad1Cost *= 2;
         document.getElementById("kennelUpgrade").innerHTML = `Buy Kennel Upgrade (cost: ${kennelUpgrade1Cost})`;
         document.getElementById("dpm").innerHTML = dpm;
       } else if (upgrade === "Puppy Mill Upgrade") {
+        dpm = dpm - puppyMills*puppyMillEffect
         puppyMillEffect += effect;
+        dpm = dpm + puppyMills*puppyMillEffect
+        puppyMillUpgrad1Cost *= 2;
         document.getElementById("puppyMillUpgrade").innerHTML = `Buy Puppy Mill Upgrade (cost: ${puppyMillUpgrade1Cost})`;
         document.getElementById("dpm").innerHTML = dpm;
       }
