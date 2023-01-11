@@ -7,15 +7,21 @@
 </head>
     
 <body style="text-align: center;">
-  var clicks = 0;
 
-  function onClick() {
-  clicks += 1;
-  document.getElementById("clicks").innerHTML = clicks;
-  };
     
-  <button type="button" onClick="onClick()">Click me</button>
-  <p>Clicks: <a id="clicks">0</a></p>
+    
+  <button onclick="adoptDog()">Adopt a dog!</button>
+    <p>Number of dogs: <span id="dogs"></span></p>
+
+    <script>
+    let numDogs = 0;
+
+    function adoptDog() {
+        numDogs++;
+        document.getElementById("dogs").innerHTML = numDogs;
+    }
+    </script>
+
 
     
 </body>
