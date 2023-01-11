@@ -20,10 +20,10 @@
 <br>
 
 <h3>Store</h3>
-<button onclick="buyUpgrade('Bigger Click', 100, 2, clickMultiplier, 1)" id="biggerClick">Bigger Click (100)</button>
-<button onclick="buyUpgrade('Autoclick', 200, true, 1, 1)" id="autoclick">Autoclick (200)</button>
-<button onclick="buyUpgrade('Kennel Upgrade', kennelUpgrade1Cost, 5, kennelEffect, kennels)" id="kennelUpgrade">Kennel Upgrade (250)</button>
-<button onclick="buyUpgrade('Puppy Mill Upgrade', puppyMillUpgrade1Cost, 10, puppyMillEffect, puppyMills)" id="puppyMillUpgrade">Puppy Mill Upgrade (500)</button>  
+<button onclick="buyUpgrade('Bigger Click', 100, 2, clickMultiplier, 1, dpm)" id="biggerClick">Bigger Click (100)</button>
+<button onclick="buyUpgrade('Autoclick', 200, true, 1, 1, dpm)" id="autoclick">Autoclick (200)</button>
+<button onclick="buyUpgrade('Kennel Upgrade', kennelUpgrade1Cost, 5, kennelEffect, kennels, dpm)" id="kennelUpgrade">Kennel Upgrade (250)</button>
+<button onclick="buyUpgrade('Puppy Mill Upgrade', puppyMillUpgrade1Cost, 10, puppyMillEffect, puppyMills, dpm)" id="puppyMillUpgrade">Puppy Mill Upgrade (500)</button>  
 
 
 <script>
@@ -75,12 +75,13 @@
     }
   }
       
-   function buyUpgrade(upgrade, cost, effect, oldeffect, buildings) {
+   function buyUpgrade(upgrade, cost, effect, oldeffect, buildings, dpm) {
     if (numDogs >= cost) {
       numDogs -= cost;
       document.getElementById("dogs").innerHTML = numDogs;
       if (upgrade === "Bigger Click") {
         clickMultiplier = effect;
+        document.getElementById("clickMultiplier").innerHTML = clickMultiplier;
       } else if (upgrade === "Autoclick") {
         autoClick = effect;
         document.getElementById("autoClick").disabled = true;
