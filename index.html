@@ -12,17 +12,17 @@
 <br>
 
 <h3>Buildings</h3>
-<button onclick="buyBuilding('Kennel', kennelCost, 1)" id="buyKennel">Buy Kennel</button>
+<button onclick="buyBuilding('Kennel', kennelCost, kennelEffect)" id="buyKennel">Buy Kennel</button>
 <p>Kennels: <span id="kennels"></span></p>
-<button onclick="buyBuilding('Puppy Mill', puppyMillCost, 5)" id="buyPuppyMill">Buy Puppy Mill</button>
+<button onclick="buyBuilding('Puppy Mill', puppyMillCost, puppyMillEffect)" id="buyPuppyMill">Buy Puppy Mill</button>
 <p>Puppy Mills: <span id="puppymills"></span></p>
 <br>
 
 <h3>Store</h3>
-<button onclick="buyUpgrade('Bigger Click', 100, 2)" id="biggerClick">Bigger Click</button>
-<button onclick="buyUpgrade('Autoclick', 200, true)" id="autoclick">Autoclick</button>
-<button onclick="buyUpgrade('Kennel Upgrade', 250, 5)" id="kennelUpgrade">Kennel Upgrade</button>
-<button onclick="buyUpgrade('Puppy Mill Upgrade', 500, 10)" id="puppyMillUpgrade">Puppy Mill Upgrade</button>
+<button onclick="buyUpgrade('Bigger Click', 100, 2)" id="biggerClick">Bigger Click (100)</button>
+<button onclick="buyUpgrade('Autoclick', 200, true)" id="autoclick">Autoclick (200)</button>
+<button onclick="buyUpgrade('Kennel Upgrade', 250, 5)" id="kennelUpgrade">Kennel Upgrade (250)</button>
+<button onclick="buyUpgrade('Puppy Mill Upgrade', 500, 10)" id="puppyMillUpgrade">Puppy Mill Upgrade (500)</button>
 
 <script>
   let numDogs = 0;
@@ -32,7 +32,9 @@
   let clickMultiplier = 1;
   let autoClick = false;
   let kennelCost = 10;
+  let kennelEffect = 1;
   let puppyMillCost = 50;
+  let puppyMillEffect = 5;
   setInterval(() => {
     numDogs += dpm;
     document.getElementById("dogs").innerHTML = numDogs;
