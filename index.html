@@ -21,8 +21,8 @@
 <h3>Store</h3>
 <button onclick="buyUpgrade('Bigger Click', 100, 2)" id="biggerClick">Bigger Click (100)</button>
 <button onclick="buyUpgrade('Autoclick', 200, true)" id="autoclick">Autoclick (200)</button>
-<button onclick="buyUpgrade('Kennel Upgrade', 250, 5)" id="kennelUpgrade">Kennel Upgrade (250)</button>
-<button onclick="buyUpgrade('Puppy Mill Upgrade', 500, 10)" id="puppyMillUpgrade">Puppy Mill Upgrade (500)</button>
+<button onclick="buyUpgrade('Kennel Upgrade', kennelUpgrade1Cost, 5)" id="kennelUpgrade">Kennel Upgrade (250)</button>
+<button onclick="buyUpgrade('Puppy Mill Upgrade', puppyMillUpgrade1Cost, 10)" id="puppyMillUpgrade">Puppy Mill Upgrade (500)</button>
 
 <script>
   let numDogs = 0;
@@ -35,6 +35,8 @@
   let kennelEffect = 1;
   let puppyMillCost = 50;
   let puppyMillEffect = 5;
+  let kennelUpgrade1Cost = 250;
+  let puppyMillUpgrade1Cost = 500;
   setInterval(() => {
     numDogs += dpm;
     document.getElementById("dogs").innerHTML = numDogs;
@@ -78,10 +80,12 @@
         autoClick = effect;
       } else if (upgrade === "Kennel Upgrade") {
         kennelEffect += effect;
-        document.getElementById("dpm").innerHTML = dpm;
+        document.getElementById("kennelUpgrade").innerHTML = `Buy Kennel Upgrade (cost: ${kennelUpgrade1Cost})`;
+        #document.getElementById("dpm").innerHTML = dpm;
       } else if (upgrade === "Puppy Mill Upgrade") {
         puppyMillEffect += effect;
-        document.getElementById("dpm").innerHTML = dpm;
+        document.getElementById("puppyMillUpgrade").innerHTML = `Buy Puppy Mill Upgrade (cost: ${puppyMillUpgrade1Cost})`;
+        #document.getElementById("dpm").innerHTML = dpm;
       }
     }
   }
