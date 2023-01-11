@@ -82,6 +82,7 @@
         clickMultiplier = effect;
       } else if (upgrade === "Autoclick") {
         autoClick = effect;
+        document.getElementById("autoClick").disabled = true;
       } else if (upgrade === "Kennel Upgrade") {
         dpm = dpm - kennels*kennelEffect;
         kennelEffect += effect;
