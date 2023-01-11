@@ -5,24 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlorenceKnighting.github.io</title>
 </head>
-    
 
-
-<script>
-  let numDogs = 0;
-  let dpm = 0;
-  let kennels = 0;
-  let puppyMills = 0;
-  let clickMultiplier = 1;
-  let autoClick = false;
-  let kennelCost = 10;
-  let kennelEffect = 1;
-  let puppyMillCost = 50;
-  let puppyMillEffect = 5;
-  let kennelUpgrade1Cost = 250;
-  let puppyMillUpgrade1Cost = 500;
-    
-  <button onclick="adoptDog()" id="adoptButton">Adopt a dog!</button>
+<button onclick="adoptDog()" id="adoptButton">Adopt a dog!</button>
 <p>Number of dogs: <span id="dogs"></span></p>
 <p>Dogs per second: <span id="dpm"></span></p>
 <br>
@@ -39,11 +23,23 @@
 <button onclick="buyUpgrade('Autoclick', 200, true)" id="autoclick">Autoclick (200)</button>
 <button onclick="buyUpgrade('Kennel Upgrade', kennelUpgrade1Cost, 5)" id="kennelUpgrade">Kennel Upgrade (250)</button>
 <button onclick="buyUpgrade('Puppy Mill Upgrade', puppyMillUpgrade1Cost, 10)" id="puppyMillUpgrade">Puppy Mill Upgrade (500)</button>  
+
+
+<script>
+  let numDogs = 0;
+  let dpm = 0;
+  let kennels = 0;
+  let puppyMills = 0;
+  let clickMultiplier = 1;
+  let autoClick = false;
+  let kennelCost = 10;
+  let kennelEffect = 1;
+  let puppyMillCost = 50;
+  let puppyMillEffect = 5;
+  let kennelUpgrade1Cost = 250;
+  let puppyMillUpgrade1Cost = 500;
     
-    
-    
-    
-    
+   
     
   setInterval(() => {
     numDogs += dpm;
