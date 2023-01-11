@@ -86,14 +86,14 @@
       } else if (upgrade === "Kennel Upgrade") {
         dpm = dpm - buildings*oldeffect;
         kennelEffect += effect;
-        dpm = dpm + buildings*oldeffect;
+        dpm = dpm + buildings*kennelEffect;
         kennelUpgrad1Cost *= 2;
         document.getElementById("kennelUpgrade").innerHTML = `Buy Kennel Upgrade (cost: ${kennelUpgrade1Cost})`;
         document.getElementById("dpm").innerHTML = dpm;
       } else if (upgrade === "Puppy Mill Upgrade") {
         dpm = dpm - buildings*oldeffect;
         puppyMillEffect += effect;
-        dpm = dpm + buildings*oldeffect;
+        dpm = dpm + buildings*puppyMillEffect;
         puppyMillUpgrad1Cost *= 2;
         document.getElementById("puppyMillUpgrade").innerHTML = `Buy Puppy Mill Upgrade (cost: ${puppyMillUpgrade1Cost})`;
         document.getElementById("dpm").innerHTML = dpm;
