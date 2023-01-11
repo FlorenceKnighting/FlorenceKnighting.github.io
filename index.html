@@ -6,7 +6,7 @@
     <title>FlorenceKnighting.github.io</title>
 </head>
     
-<button onclick="adoptDog()">Adopt a dog!</button>
+<button onclick="adoptDog()" id="clickerButton">Adopt a dog!</button>
 <p>Number of dogs: <span id="dogs"></span></p>
 <p>Dogs per minute: <span id="dpm"></span></p>
 <br>
@@ -16,6 +16,12 @@
 <p>Kennels: <span id="kennels"></span></p>
 <button onclick="buyBuilding('Puppy Mill', 50, 5)" id="buyPuppyMill">Buy Puppy Mill</button>
 <p>Puppy Mills: <span id="puppymills"></span></p>
+<br>
+
+<h3>Store</h3>
+<button onclick="buyUpgrade('clicker', 50, 2)" id="upgradeClicker">Upgrade Clicker (cost: 50)</button>
+<button onclick="buyUpgrade('kennel', 100, 10)" id="upgradeKennel">Upgrade Kennel (cost: 100)</button>
+<button onclick="buyUpgrade('puppymill', 150, 20)" id="upgradePuppyMill">Upgrade Puppy Mill (cost: 150)</button>
 
 <script>
   let numDogs = 0;
@@ -24,20 +30,23 @@
   let puppyMills = 0;
   let kennelCost = 10;
   let puppyMillCost = 50;
+  let clickerMultiplier = 1;
+  let kennelMultiplier = 1;
+  let puppyMillMultiplier = 1;
   setInterval(() => {
-    numDogs += dpm;
+    numDogs += dpm * puppyMillMultiplier;
     document.getElementById("dogs").innerHTML = numDogs;
   }, 1000);
 
   function adoptDog() {
-    numDogs++;
+    numDogs += clickerMultiplier;
     document.getElementById("dogs").innerHTML = numDogs;
   }
 
   function buyBuilding(building, cost, dpmIncrease) {
     if (numDogs >= cost) {
       numDogs -= cost;
-      dpm += dpmIncrease;
+      dpm += dpmIncrease * kennelMultiplier;
       document.getElementById("dogs").innerHTML = numDogs;
       document.getElementById("dpm").innerHTML = dpm;
       if (building === "Kennel") {
@@ -53,12 +62,7 @@
       }
     }
   }
-
-  document.getElementById("buyKennel").innerHTML = `Buy Kennel (cost: ${kennelCost})`;
-  document.getElementById("buyPuppyMill").innerHTML = `Buy Puppy Mill (cost: ${puppyMillCost})`;
-  document.getElementById("dpm").innerHTML = dpm;
-</script>
-
+<\script>
 
     
 </body>
