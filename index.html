@@ -6,7 +6,6 @@
     <title>FlorenceKnighting.github.io</title>
 </head>
     
-<body style="text-align: center;">
 <button onclick="adoptDog()">Adopt a dog!</button>
 <p>Number of dogs: <span id="dogs"></span></p>
 <p>Dogs per minute: <span id="dpm"></span></p>
@@ -15,12 +14,16 @@
 <h3>Buildings</h3>
 <button onclick="buyBuilding('Kennel', 10, 1)" id="buyKennel">Buy Kennel</button>
 <p>Kennels: <span id="kennels"></span></p>
+<button onclick="buyBuilding('Puppy Mill', 50, 5)" id="buyPuppyMill">Buy Puppy Mill</button>
+<p>Puppy Mills: <span id="puppymills"></span></p>
 
 <script>
   let numDogs = 0;
   let dpm = 0;
   let kennels = 0;
+  let puppyMills = 0;
   let kennelCost = 10;
+  let puppyMillCost = 50;
   setInterval(() => {
     numDogs += dpm;
     document.getElementById("dogs").innerHTML = numDogs;
@@ -42,11 +45,17 @@
         document.getElementById("kennels").innerHTML = kennels;
         kennelCost *= 2;
         document.getElementById("buyKennel").innerHTML = `Buy Kennel (cost: ${kennelCost})`;
+      } else if (building === "Puppy Mill") {
+        puppyMills++;
+        document.getElementById("puppymills").innerHTML = puppyMills;
+        puppyMillCost *= 2;
+        document.getElementById("buyPuppyMill").innerHTML = `Buy Puppy Mill (cost: ${puppyMillCost})`;
       }
     }
   }
 
   document.getElementById("buyKennel").innerHTML = `Buy Kennel (cost: ${kennelCost})`;
+  document.getElementById("buyPuppyMill").innerHTML = `Buy Puppy Mill (cost: ${puppyMillCost})`;
   document.getElementById("dpm").innerHTML = dpm;
 </script>
 
